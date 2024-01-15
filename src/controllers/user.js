@@ -1,7 +1,10 @@
 // controllers/user.js
-const UserService = require('../services/user');
+
+const UserModel = require('../models/user');
 
 exports.getAllUsers = async (req, res) => {
-  const users = await UserService.getAllUsers();
-  res.json(users);
+
+    const users = await UserModel.find();
+
+    res.json(users);
 };

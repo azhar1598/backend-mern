@@ -3,21 +3,21 @@ const mongoose = require('mongoose');
 const userSchema = new mongoose.Schema({
   firstName: {
     type: String,
-    required: true,
+    trim: true
+
   },
   lastName: {
     type: String,
-    required: true,
+    trim: true
   },
-  email: {
+  userName: {
     type: String,
     required: true,
-    unique: true,
-    // You may want to add additional validation for email format
+    unique: true
   },
-  age: {
-    type: Number,
-    // Optional: You can add validation for a minimum or maximum age
+  password: {
+    type: String,
+    required: true
   },
   createdAt: {
     type: Date,
