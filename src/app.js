@@ -3,9 +3,14 @@ require('dotenv').config(); // If you're using environment variables
 
 const port = process.env.PORT || 5500
 const express = require('express')
+const cors = require('cors');
 const jwt = require('jsonwebtoken');
 const app = express()
 const bodyParser = require('body-parser');
+
+// Use cors middleware
+app.use(cors());
+
 
 // Parse application/json
 app.use(bodyParser.json());

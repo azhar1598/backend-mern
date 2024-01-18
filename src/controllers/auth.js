@@ -35,7 +35,10 @@ const registerUser = async (req, res) => {
 const loginUser = async (req, res) => {
     // Login logic
     const { userName, password } = req.body;
+
+    console.log('username========>',userName,password)
     const user = await UserModel.findOne({ userName });
+
 
     if (user && await bcrypt.compare(password, user.password)) {
         const accessToken = generateAccessToken({ userName });
